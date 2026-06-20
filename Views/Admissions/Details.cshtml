@@ -1,0 +1,66 @@
+﻿@model HospitalManagementSystem.Models.Admission
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Admission</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Bed.BedNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bed.BedNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Doctor.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Doctor.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Patient.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Patient.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AdmissionDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdmissionDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DischargeDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DischargeDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TreatmentSummary)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TreatmentSummary)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AdmissionId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
