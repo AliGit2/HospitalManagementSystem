@@ -1,9 +1,9 @@
-﻿using System;
+ ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using HospitalManagementSystem.Models; // Grants access to your Patient, Doctor, Bed, and Admission models
+using HospitalManagementSystem.Models;
 
 namespace HospitalManagementSystem.Controllers
 {
@@ -24,12 +24,10 @@ namespace HospitalManagementSystem.Controllers
                 avgStayDays = dischargedAdmissions.Average(a => (a.DischargeDate.Value - a.AdmissionDate).TotalDays);
             }
 
-            // --- GCN FEATURE 2: Calculate Bed Utilization Trends ---
             int totalBeds = db.Beds.Count();
             int occupiedBeds = db.Beds.Count(b => b.IsOccupied);
             double utilizationRate = totalBeds > 0 ? ((double)occupiedBeds / totalBeds) * 100 : 0;
 
-            // Pass stats to the View using ViewBag properties
             ViewBag.AvgStayDays = Math.Round(avgStayDays, 1);
             ViewBag.BedUtilization = Math.Round(utilizationRate, 1);
             ViewBag.TotalPatients = db.Patients.Count();
