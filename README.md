@@ -1,4 +1,4 @@
-# Hospital Management System
+# Hospital Management Systems
 
 An ASP.NET MVC Hospital Management System for tracking Patients, Doctors, Wards, Beds, and Admissions. Built as a Web Lab Final OEL project.
 
